@@ -999,7 +999,6 @@
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
   // ── EMAILJS ──
-  emailjs.init('pSxMAhgqRsYPNbwyb');
 
   async function submitForm() {
     const fname    = document.getElementById('fname').value.trim();
@@ -1034,8 +1033,7 @@
     }
   }
 </script>
-
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- EmailJS SDK — must load first -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" onload="emailjs.init('pSxMAhgqRsYPNbwyb')"></script>
 </body>
 </html>
